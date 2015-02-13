@@ -1,2 +1,2 @@
 # vim-config
-vim config file
+vim config file for html css javascript
