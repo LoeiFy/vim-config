@@ -5,6 +5,9 @@ filetype on "打开文件类型检测功能
 filetype plugin on "根据文件类型加载相应的插件
 filetype indent on "根据文件类型选择不同的缩进格式
 
+" vue
+au BufRead,BufNewFile *.vue set filetype=html
+
 set vb t_vb=  " 关闭提示音
 
 " 设置工具栏
