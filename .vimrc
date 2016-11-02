@@ -1,14 +1,21 @@
 set nocompatible
 
+set ffs=unix,dos
+set ff=unix
+
 " 文件类型检测
 filetype on "打开文件类型检测功能
 filetype plugin on "根据文件类型加载相应的插件
 filetype indent on "根据文件类型选择不同的缩进格式
 
-" vue
-au BufRead,BufNewFile *.vue set filetype=html
-
 set vb t_vb=  " 关闭提示音
+
+" 配色方案
+" set background=dark
+" colorscheme solarized
+let g:enable_bold_font = 1
+colorscheme hybrid_material
+set guifont=FiraMono-Regular:h12
 
 " 设置工具栏
 if has("gui_running")
@@ -18,10 +25,16 @@ if has("gui_running")
     set guioptions-=r "隐藏右侧滚动条
     set showtabline=0 "隐藏Tab栏
 
-	set lines=40 columns=150 " 窗口大小
+	set lines=40 columns=120 " 窗口大小
+
+    " let g:enable_bold_font = 1
+    " colorscheme hybrid_material
 
     set transparency=3
-	set guifont=Monaco:h12
+    " set guifont=Monaco:h12
+    " set guifont=RobotoMono-Regular:h12
+    " set guifont=FiraMono-Regular:h12
+    " set noantialias
 endif
 
 " 快捷键分窗口
@@ -42,10 +55,6 @@ set smartcase
 " 语法高亮
 syntax enable
 syntax on
-
-" 配色方案
-set background=dark
-colorscheme solarized
 
 set number "显示行号
 set cursorline " 高亮所在行
@@ -112,6 +121,9 @@ if has("autocmd")
     "auto close for PHP and Javascript script
     au FileType php,c,python,javascript exe AutoClose()
 endif
+
+" vue
+au BufRead,BufNewFile *.vue set filetype=html
 
 " HTML 标签补全
 function! InsertHtmlTag()
