@@ -141,3 +141,11 @@ let pat = '\c<\w\+\s*\(\s\+\w\+\s*=\s*[''#$;,()."a-z0-9]\+\)*\s*>'
   :call cursor(save_cursor[1], save_cursor[2], save_cursor[3])
 endfunction
 inoremap > <ESC>:call InsertHtmlTag()<CR>a
+
+" 保存文件时候 retab
+fu! ResetSpaces()
+    :retab
+endfunction
+
+autocmd BufWritePre * :call ResetSpaces()
+
